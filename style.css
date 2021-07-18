@@ -38,11 +38,33 @@ main{
     border: 200px solid #e3d41d;
     border-left-color: transparent;
     border-bottom-color: transparent;
+    animation: eating-top .5s ease infinite;
 }
 
 .pacman::after{
     border: 200px solid #e3d41d;
     border-right-color: transparent;
     border-top-color: transparent;
+    animation: eating-bottom .5s ease infinite;
+}
+
+@keyframes eating-top{
+    0%, 100%{
+        transform: rotate(-45deg);
+    }
+
+    50%{
+        transform: rotate(-80deg);
+    }
+}
+
+@keyframes eating-bottom{
+    0%, 100%{
+        transform: rotate(-40deg);
+    }
+
+    50%{
+        transform: rotate(0deg);
+    }
 }
 
