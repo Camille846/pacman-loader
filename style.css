@@ -1,0 +1,48 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
+    background: #121b51;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    height: 50vh;
+    width: 50%;
+    overflow: hidden;
+}
+
+.pacman{
+    position: relative;
+    background:transparent;
+    z-index: 1;
+}
+
+.pacman::before, .pacman::after{
+    content: "";
+    height: 0px;
+    width: 0px;
+    top: -35px;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.pacman::before{
+    border: 200px solid #e3d41d;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.pacman::after{
+    border: 200px solid #e3d41d;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
