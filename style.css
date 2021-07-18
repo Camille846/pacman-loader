@@ -6,49 +6,75 @@ body{
     display: flex;
     align-items: center;
     justify-items: center;
-    height: 100vh;
+    justify-content: center;
+    min-height: 100vh;
     background: #121b51;
-}
-
-main{
-    display: flex;
-    align-items: center;
-    height: 50vh;
-    width: 50%;
-    overflow: hidden;
 }
 
 .pacman{
     position: relative;
     background:transparent;
-    z-index: 1;
+    width: 160px;
+    height: 160px;
 }
 
 .pacman::before, .pacman::after{
     content: "";
-    height: 0px;
-    width: 0px;
-    top: -35px;
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 0;
     display: block;
     position: absolute;
     border-radius: 50%;
+    border: 80px solid #e3d41d;
 }
 
 .pacman::before{
-    border: 200px solid #e3d41d;
     border-left-color: transparent;
     border-bottom-color: transparent;
-    animation: eating-top .5s ease infinite;
+    animation: mouth-top .5s ease infinite;
 }
 
 .pacman::after{
-    border: 200px solid #e3d41d;
     border-right-color: transparent;
     border-top-color: transparent;
-    animation: eating-bottom .5s ease infinite;
+    animation: mouth-bottom .5s ease infinite;
 }
 
-@keyframes eating-top{
+.food{
+    float: left;
+
+}
+
+.food div{
+    background-color: #dfdfdf ;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 2000px;
+    border-radius: 50%;
+    animation: food-movement 1s linear infinite;
+}
+
+.food div:nth-child(1){
+    animation-delay: .5s;
+}
+
+.food div:nth-child(2){
+    animation-delay: 1s;
+}
+
+.food div:nth-child(3){
+    animation-delay: 1s;
+}
+
+.food div:nth-child(4){
+    animation-delay: 1s;
+}
+
+@keyframes mouth-top{
     0%, 100%{
         transform: rotate(-45deg);
     }
@@ -58,7 +84,7 @@ main{
     }
 }
 
-@keyframes eating-bottom{
+@keyframes mouth-bottom{
     0%, 100%{
         transform: rotate(-40deg);
     }
@@ -68,3 +94,30 @@ main{
     }
 }
 
+@keyframes food-movement{
+    /* 0%{
+        left: 250px;
+    }
+
+    100%{
+        left: 0;
+    } */
+
+    /* 0% {
+        transform: translateX(0);
+          opacity: 1;
+      }
+      100% {
+        transform: translateX(-100px);
+        opacity: 0;
+      } */
+
+      20%, 80%{
+        opacity: 1;
+      }
+
+      100%{
+          transform: translate(-500px, -40%);
+      }
+
+}
