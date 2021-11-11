@@ -1,109 +1,123 @@
 /* Desktop: 1920x1080; */
 
-html{
-    margin: 0;
-    padding: 0;
-}
-body{
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: #121b51;
-}
-
-.pacman{
-    position: relative;
-    background:transparent;
-    width: 160px;
-    height: 160px;
-}
-
-.pacman::before, .pacman::after{
-    content: "";
-    height: 0;
-    width: 0;
-    top: 0;
-    left: 0;
-    display: block;
+.frame {
     position: absolute;
-    border-radius: 50%;
-    border: 80px solid #e3d41d;
-}
-
-.pacman::before{
-    border-left-color: transparent;
-    border-bottom-color: transparent;
-    animation: mouth-top .5s ease infinite;
-}
-
-.pacman::after{
-    border-right-color: transparent;
-    border-top-color: transparent;
-    animation: mouth-bottom .5s ease infinite;
-}
-
-.food{
-    float: left;
-
-}
-
-.food div{
-    background-color: #dfdfdf ;
-    position: absolute;
-    width: 50px;
-    height: 50px;
     top: 50%;
-    left: 80%;
-    border-radius: 50%;
-    animation: food-movement 1s linear infinite;
-}
-
-.food div:nth-child(1){
-    animation-delay: .5s;
-}
-
-.food div:nth-child(2){
-    animation-delay: 1s;
-}
-
-.food div:nth-child(3){
-    animation-delay: 1s;
-}
-
-.food div:nth-child(4){
-    animation-delay: 1s;
-}
-
-@keyframes mouth-top{
-    0%, 100%{
-        transform: rotate(-45deg);
-    }
-
-    50%{
-        transform: rotate(-80deg);
-    }
-}
-
-@keyframes mouth-bottom{
-    0%, 100%{
-        transform: rotate(-40deg);
-    }
-
-    50%{
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes food-movement{
-
-      20%, 80%{
-        opacity: 1;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+      box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+      overflow: hidden;
+    background: #121b51;;
+    color: #333;
+      font-family: 'Open Sans', Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  
+  .pacman{
+      position: relative;
+      background:transparent;
+      width: 160px;
+      height: 160px;
+  }
+  
+  .pacman::before, .pacman::after{
+      content: "";
+      height: 0;
+      width: 0;
+      top: 0;
+      left: 0;
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      border: 80px solid #e3d41d;
+  }
+  
+  .pacman::before{
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      animation: mouth-top .5s ease infinite;
+  }
+  
+  .pacman::after{
+      border-right-color: transparent;
+      border-top-color: transparent;
+      animation: mouth-bottom .5s ease infinite;
+  }
+  
+  .food{
+      float: left;
+  
+  }
+  
+  .food div{
+      background-color: #dfdfdf ;
+      position: absolute;
+      top: 50%;
+      left:200%;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      animation: food-movement 1s linear infinite;
+  }
+  
+  .food div:nth-child(1){
+      animation-delay: .5s;
+  }
+  
+  .food div:nth-child(2){
+      animation-delay: 1s;
+  }
+  
+  .food div:nth-child(3){
+      animation-delay: 1s;
+  }
+  
+  .food div:nth-child(4){
+      animation-delay: 1s;
+  }
+  
+  @keyframes mouth-top{
+      0%, 100%{
+          transform: rotate(-45deg);
       }
-
-      100%{
-          transform: translate(-544px, -40%);
+  
+      50%{
+          transform: rotate(-80deg);
       }
-
-}
+  }
+  
+  @keyframes mouth-bottom{
+      0%, 100%{
+          transform: rotate(-40deg);
+      }
+  
+      50%{
+          transform: rotate(0deg);
+      }
+  }
+  
+  @keyframes food-movement{
+  
+        20%, 80%{
+          opacity: 1;
+        }
+  
+        100%{
+            transform: translate(-200px, -25%)
+        }
+  
+  }
+  
