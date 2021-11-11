@@ -1,7 +1,5 @@
 # Pacman Loader
 I created this simple pacman loader to improve my CSS animations skills.
-
-﻿t skills. 
  
  ## 🕸️ Table of contents
 
@@ -13,10 +11,10 @@ I created this simple pacman loader to improve my CSS animations skills.
 - [Author](#author)
 
 ## 👻 About the Project
-
 * Simple Animation Loader using HTML and CSS
 
 ## Gif
+![pacman](https://user-images.githubusercontent.com/83260908/141374030-6544a935-6cf5-4009-8c13-17169d004211.gif)
 
 ## ☠️ Built With
 * HTML
